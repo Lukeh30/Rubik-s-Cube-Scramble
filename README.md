@@ -1,2 +1,3 @@
 # Rubik-s-Cube-Scramble
-Gives official WCA Rubik's cube scrambles.
+Gives Rubik's cube scrambles with no moves that undo themselves.
+Also displays the cube format after scrambled.
