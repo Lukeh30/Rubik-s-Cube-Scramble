@@ -15,8 +15,11 @@ def rotate(input):
         elif input[1:2] == "2":
             modifier = -2
     np.rot90(cube[axis], k=modifier)
-    temp = rot[axis][0:1]
-    print(temp)
+    side = ((faces.index(input) + 1) % 2) * 2
+    temp = cube[rot[axis][3]][:,side].copy()
+    for i in range(3, 0, -1):
+        cube[rot[axis][i]][:,side] = cube[rot[axis][i-1]][:,side]
+    cube[rot[axis][0]][:,side] = temp
 
 def printCube():
     for i in range(3):
