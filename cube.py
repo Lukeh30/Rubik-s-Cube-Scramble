@@ -1,15 +1,18 @@
 import numpy as np
+faces = {"R", "L", "U", "D", "F", "B",}
+colors = {"r", "o", "w", "y", "g", "b",}
 cube = dict()
-cube["R"] = np.full((3, 3), 'r')
-cube["L"] = np.full((3, 3), 'o')
-cube["U"] = np.full((3, 3), 'w')
-cube["D"] = np.full((3, 3), 'y')
-cube["F"] = np.full((3, 3), 'g')
-cube["B"] = np.full((3, 3), 'b')
-def rotate(self, input):
+for i in range(6):
+    cube[faces[i]] = np.full((3, 3), colors[i])
+
+def rotate(input):
     axis = input[0:1]
-    modifier = ""
+    modifier = -1
     if len(input) > 1:
-        modifier = input[1:2]
+        if input[1:2] == "'":
+            modifier = 1
+        elif input[1:2] == "2":
+            modifier = -2
+    np.rot90(cube[axis], k=modifier)
 
 
