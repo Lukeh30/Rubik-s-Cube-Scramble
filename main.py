@@ -9,9 +9,8 @@ def block(color, length):
     print(f"\033[{color}m{' ' * length}\033[0m")
 print("Have green as front face and white as top face.")
 scram = Sc.scrambleCube(20)
-#print(scram)
 print(toString(scram))
-cube.rotate("U'")
-#cube.rotate("L")
+for i in range(len(scram)):
+    cube.rotate(scram[i])
 cube.printCube()
 
