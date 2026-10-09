@@ -11,6 +11,7 @@ print("Have green as front face and white as top face.")
 scram = Sc.scrambleCube(20)
 #print(scram)
 print(toString(scram))
-cube.rotate("R")
+cube.rotate("U'")
+#cube.rotate("L")
 cube.printCube()
 
